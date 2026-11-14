@@ -91,6 +91,7 @@ h2 { font-family: var(--display); font-weight: 400; font-size: clamp(1.5rem, 4vw
 .panel > h2:first-child { margin-top: .5rem; }
 h3 { font-size: 1.05rem; font-weight: 700; color: var(--text); }
 .lead { color: var(--muted); font-size: 1.08rem; max-width: 65ch; margin: 0 0 1.5rem; }
+#home .lead { text-align: center; margin-left: auto; margin-right: auto; } /* Centre the welcome text */
 .eyebrow { text-transform: uppercase; letter-spacing: .18em; font-size: .78rem; font-weight: 600; color: var(--muted); margin: 0 0 .5rem; }
 
 /* ---------- Hero ---------- */
