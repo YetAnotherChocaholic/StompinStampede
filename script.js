@@ -29,6 +29,11 @@
     phoneTop.href = "tel:" + S.contactPhone.replace(/[^\d+]/g, "");
     phoneTop.title = S.contactPhone.trim();
   } else phoneTop.hidden = true;
+  [["instagramUrl", "[data-instagram]"], ["tiktokUrl", "[data-tiktok]"]].forEach(([key, sel]) => {
+    $$(sel).forEach((a) => {
+      if (has(S[key])) a.href = S[key].trim(); else a.hidden = true;
+    });
+  });
   $$("[data-register]").forEach((a) => {
     if (has(S.registerUrl)) a.href = S.registerUrl; else a.hidden = true;
   });
@@ -90,6 +95,8 @@
   if (has(S.contactEmail)) contacts.push(card("Email", `<a href="mailto:${esc(S.contactEmail)}">${S.contactEmail}</a>`));
   if (has(S.contactPhone)) contacts.push(card("Phone", `<a href="tel:${esc(S.contactPhone.replace(/[^\d+]/g, ""))}">${S.contactPhone}</a>`));
   if (fb) contacts.push(card("Facebook", `<a href="${esc(fb)}" target="_blank" rel="noopener">Follow us for the latest updates →</a>`));
+  if (has(S.instagramUrl)) contacts.push(card("Instagram", `<a href="${esc(S.instagramUrl.trim())}" target="_blank" rel="noopener">@${esc(S.instagramUrl.trim().replace(/\/+$/, "").split("/").pop())} →</a>`));
+  if (has(S.tiktokUrl)) contacts.push(card("TikTok", `<a href="${esc(S.tiktokUrl.trim())}" target="_blank" rel="noopener">${esc(S.tiktokUrl.trim().replace(/\/+$/, "").split("/").pop())} →</a>`));
   $("#contact-cards").innerHTML = contacts.join("");
 
   /* ---------- Countdown ---------- */

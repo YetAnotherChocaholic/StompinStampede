@@ -19,6 +19,8 @@ window.SITE = {
   startDate: "",                         // For the countdown, format YYYY-MM-DD (e.g. "2027-06-11"). Leave "" to hide it.
   city: "",                  // Short location, e.g. "Nashville, TN"
   facebookUrl: "https://www.facebook.com/people/Stompin-Stampede/61594414935545/",   // <-- Paste your Facebook page link here
+  instagramUrl: "https://www.instagram.com/stompinstampede",   // Leave "" to hide the Instagram links.
+  tiktokUrl: "https://www.tiktok.com/@stompinstampede",        // Leave "" to hide the TikTok links.
   registerUrl: "",                       // Link to your registration form. Leave "" to hide the Register buttons.
 
   /* ---------- HOME TAB ---------- */
