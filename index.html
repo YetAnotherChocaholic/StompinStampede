@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Stompin Stampede · Line Dance Competition · June 2027</title>
+  <meta name="description" content="Stompin Stampede — a line dance competition, June 2027.">
+  <meta name="theme-color" content="#0b0a08">
+  <meta property="og:title" content="Stompin Stampede">
+  <meta property="og:description" content="A line dance competition — June 2027.">
+  <meta property="og:image" content="logo.jpg">
+  <link rel="icon" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rye&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <a class="brand" href="#home" data-tab-link="home">
+      <img src="logo.jpg" alt="" width="40" height="40">
+      <span>Stompin Stampede</span>
+    </a>
+    <a class="fb-btn" id="fb-top" href="#" target="_blank" rel="noopener" aria-label="Facebook page">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7.5h2.5l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.5V4.4c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.4H8v3h2.6V21h2.9z"/></svg>
+      <span>Facebook</span>
+    </a>
+  </header>
+
+  <nav class="tabs" aria-label="Sections">
+    <div class="tabs-inner" role="tablist">
+      <button role="tab" data-tab="home">Home</button>
+      <button role="tab" data-tab="details">Event Details</button>
+      <button role="tab" data-tab="schedule">Schedule</button>
+      <button role="tab" data-tab="competition">Competition</button>
+      <button role="tab" data-tab="registration">Registration</button>
+      <button role="tab" data-tab="venue">Venue</button>
+      <button role="tab" data-tab="faq">FAQ</button>
+      <button role="tab" data-tab="contact">Contact</button>
+    </div>
+  </nav>
+
+  <main>
+    <!-- HOME -->
+    <section id="home" role="tabpanel" class="panel">
+      <div class="hero">
+        <img class="hero-logo" src="logo.jpg" alt="Stompin Stampede logo" width="1254" height="1254">
+        <div class="hero-text">
+          <p class="eyebrow" data-field="tagline"></p>
+          <h1 data-field="eventName"></h1>
+          <p class="hero-meta">
+            <span data-field="dateText"></span>
+            <span class="dot" aria-hidden="true">★</span>
+            <span data-field="city"></span>
+          </p>
+          <div class="countdown" id="countdown" hidden></div>
+          <div class="cta-row">
+            <a class="btn btn-gold" data-register target="_blank" rel="noopener">Register Now</a>
+            <a class="btn btn-ghost" data-facebook target="_blank" rel="noopener">Follow on Facebook</a>
+          </div>
+        </div>
+      </div>
+      <p class="lead" data-field="welcome"></p>
+      <div class="cards" id="highlights"></div>
+      <div id="announcements-wrap">
+        <h2>Announcements</h2>
+        <ul class="news" id="announcements"></ul>
+      </div>
+    </section>
+
+    <!-- DETAILS -->
+    <section id="details" role="tabpanel" class="panel" hidden>
+      <h2>Event Details</h2>
+      <p class="lead" data-field="about"></p>
+      <dl class="facts" id="facts"></dl>
+    </section>
+
+    <!-- SCHEDULE -->
+    <section id="schedule" role="tabpanel" class="panel" hidden>
+      <h2>Schedule</h2>
+      <div class="days" id="days"></div>
+    </section>
+
+    <!-- COMPETITION -->
+    <section id="competition" role="tabpanel" class="panel" hidden>
+      <h2>Divisions</h2>
+      <div class="cards" id="divisions"></div>
+      <h2>Rules &amp; Judging</h2>
+      <ul class="checklist" id="rules"></ul>
+    </section>
+
+    <!-- REGISTRATION -->
+    <section id="registration" role="tabpanel" class="panel" hidden>
+      <h2>Registration</h2>
+      <p class="lead" data-field="registrationNote"></p>
+      <div class="split">
+        <div class="box">
+          <h3>Fees</h3>
+          <table class="table" id="fees"></table>
+        </div>
+        <div class="box">
+          <h3>Key Dates</h3>
+          <table class="table" id="deadlines"></table>
+        </div>
+      </div>
+      <a class="btn btn-gold" data-register target="_blank" rel="noopener">Register Now</a>
+    </section>
+
+    <!-- VENUE -->
+    <section id="venue" role="tabpanel" class="panel" hidden>
+      <h2 data-field="venueName"></h2>
+      <p class="address" data-field="venueAddress"></p>
+      <p class="lead" data-field="venueNotes"></p>
+      <div class="map" id="map" hidden></div>
+      <div id="hotels-wrap">
+        <h2>Where to Stay</h2>
+        <div class="cards" id="hotels"></div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" role="tabpanel" class="panel" hidden>
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq" id="faq-list"></div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" role="tabpanel" class="panel" hidden>
+      <h2>Contact Us</h2>
+      <p class="lead" data-field="contactNote"></p>
+      <div class="cards" id="contact-cards"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <img src="logo.jpg" alt="" width="56" height="56">
+    <p><strong data-field="eventName"></strong> · <span data-field="dateText"></span></p>
+    <a class="fb-link" data-facebook target="_blank" rel="noopener">Find us on Facebook</a>
+  </footer>
+
+  <script src="content.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
