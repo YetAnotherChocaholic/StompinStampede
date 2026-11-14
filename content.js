@@ -14,11 +14,11 @@ window.SITE = {
 
   /* ---------- GENERAL ---------- */
   eventName: "Stompin Stampede",
-  tagline: "A Line Dance Competition",
+  tagline: "A Line Dance Competition built for people just entering the competition field.",
   dateText: "June 2027",                 // Shown everywhere, e.g. "June 11–13, 2027"
   startDate: "",                         // For the countdown, format YYYY-MM-DD (e.g. "2027-06-11"). Leave "" to hide it.
   city: "Location TBA",                  // Short location, e.g. "Nashville, TN"
-  facebookUrl: "https://www.facebook.com/",   // <-- Paste your Facebook page link here
+  facebookUrl: "https://www.facebook.com/people/Stompin-Stampede/61594414935545/",   // <-- Paste your Facebook page link here
   registerUrl: "",                       // Link to your registration form. Leave "" to hide the Register buttons.
 
   /* ---------- HOME TAB ---------- */
@@ -112,7 +112,7 @@ window.SITE = {
   ],
 
   /* ---------- CONTACT TAB ---------- */
-  contactEmail: "",                      // e.g. "info@stompinstampede.com"
-  contactPhone: "",                      // e.g. "(555) 123-4567"
+  contactEmail: "stompinstampede2027@gmail.com",                      // e.g. "info@stompinstampede.com"
+  contactPhone: "0436127325",                      // e.g. "(555) 123-4567"
   contactNote: "Questions? Reach out — we’d love to hear from you.",
 };
