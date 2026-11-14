@@ -25,7 +25,7 @@ window.SITE = {
 
   /* ---------- HOME TAB ---------- */
   welcome:
-    "Stompin Stampede is a line dance competition based in Queensland built for people who are just entering the competition field. More information coming soon; check out our Facebook page for more information." +
+    "Stompin Stampede is a line dance competition based in Queensland built for people who are just entering the competition field. More information coming soon; check out our social media pages for more information." +
     "",
 
   // Short highlight cards on the home page
