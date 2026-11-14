@@ -13,7 +13,6 @@
     else el.hidden = true;
   });
   if (!has(S.city)) $$(".hero-meta .dot").forEach((d) => (d.hidden = true));
-  if (has(S.eventName)) document.title = `${S.eventName} · ${S.tagline || ""} · ${S.dateText || ""}`.replace(/ · ( · )?$/, "");
 
   /* ---------- Links ---------- */
   const fb = has(S.facebookUrl) ? S.facebookUrl : null;
@@ -120,6 +119,8 @@
       t.setAttribute("aria-selected", on);
       t.tabIndex = on ? 0 : -1;
       if (on) {
+        // Browser tab title, e.g. "Home | Stompin Stampede"
+        document.title = `${t.textContent.trim()} | ${S.eventName || "Stompin Stampede"}`;
         t.scrollIntoView({ block: "nearest", inline: "center", behavior: "smooth" });
         if (focus) t.focus();
       }
