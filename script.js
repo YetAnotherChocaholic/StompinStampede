@@ -37,6 +37,7 @@
   /* ---------- Helpers ---------- */
   const fill = (id, items, render, wrapId) => {
     const el = document.getElementById(id);
+    if (!el) return; // Section removed or commented out of index.html — skip it.
     const arr = list(items);
     if (!arr.length) {
       (wrapId ? document.getElementById(wrapId) : el).hidden = true;
