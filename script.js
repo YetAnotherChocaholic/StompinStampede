@@ -20,6 +20,16 @@
   [$("#fb-top"), ...$$("[data-facebook]")].forEach((a) => {
     if (fb) a.href = fb; else a.hidden = true;
   });
+  const emailTop = $("#email-top");
+  if (has(S.contactEmail)) {
+    emailTop.href = "mailto:" + S.contactEmail.trim();
+    emailTop.title = S.contactEmail.trim();
+  } else emailTop.hidden = true;
+  const phoneTop = $("#phone-top");
+  if (has(S.contactPhone)) {
+    phoneTop.href = "tel:" + S.contactPhone.replace(/[^\d+]/g, "");
+    phoneTop.title = S.contactPhone.trim();
+  } else phoneTop.hidden = true;
   $$("[data-register]").forEach((a) => {
     if (has(S.registerUrl)) a.href = S.registerUrl; else a.hidden = true;
   });

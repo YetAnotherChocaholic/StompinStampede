@@ -44,6 +44,10 @@ a { color: var(--gold-2); }
 }
 .fb-btn svg { width: 18px; height: 18px; fill: currentColor; }
 .fb-btn:hover { background: #166fe0; }
+.top-links { display: flex; align-items: center; gap: .5rem; flex-shrink: 0; }
+.fb-btn[hidden] { display: none; }
+.contact-btn { background: transparent; color: var(--text); border: 1px solid var(--line); }
+.contact-btn:hover { background: rgba(255, 255, 255, .08); }
 
 /* ---------- Tabs ---------- */
 .tabs {
@@ -187,6 +191,7 @@ h3 { font-size: 1.05rem; font-weight: 700; color: var(--text); }
   .brand span { font-size: 1rem; }
   .fb-btn span { display: none; }
   .fb-btn { padding: .5rem; }
+  .top-links { gap: .35rem; }
   .news li { flex-direction: column; gap: .25rem; }
   .countdown div { min-width: 0; flex: 1; }
 }
