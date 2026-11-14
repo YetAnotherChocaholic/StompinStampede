@@ -14,17 +14,17 @@ window.SITE = {
 
   /* ---------- GENERAL ---------- */
   eventName: "Stompin Stampede",
-  tagline: "A Line Dance Competition built for people just entering the competition field.",
+  tagline: "",
   dateText: "June 2027",                 // Shown everywhere, e.g. "June 11–13, 2027"
   startDate: "",                         // For the countdown, format YYYY-MM-DD (e.g. "2027-06-11"). Leave "" to hide it.
-  city: "Location TBA",                  // Short location, e.g. "Nashville, TN"
+  city: "",                  // Short location, e.g. "Nashville, TN"
   facebookUrl: "https://www.facebook.com/people/Stompin-Stampede/61594414935545/",   // <-- Paste your Facebook page link here
   registerUrl: "",                       // Link to your registration form. Leave "" to hide the Register buttons.
 
   /* ---------- HOME TAB ---------- */
   welcome:
-    "Pull on your boots and get ready to stomp! Stompin Stampede brings line dancers " +
-    "of every level together for a weekend of competition, workshops, and social dancing.",
+    "Stompin Stampede is a line dance competition based in Queensland built for people who are just entering the competition field. More information coming soon; check out our Facebook page for more information." +
+    "",
 
   // Short highlight cards on the home page
   highlights: [
