@@ -98,22 +98,23 @@ h3 { font-size: 1.05rem; font-weight: 700; color: var(--text); }
 .eyebrow { text-transform: uppercase; letter-spacing: .18em; font-size: .78rem; font-weight: 600; color: var(--muted); margin: 0 0 .5rem; }
 
 /* ---------- Hero ----------
-   Desktop (1000px+): logo | title & welcome text | video, side by side.
-   Tablet: logo beside the text, video full width underneath.
-   Phone: everything stacked and centred. */
-.hero {
-  display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 1.5rem 2.5rem; align-items: center;
-  padding: 1rem 0 2.5rem;
-}
+   Logo and title sit side by side as one row on every screen size.
+   Desktop (1000px+): welcome text and video side by side underneath.
+   Smaller screens: welcome text, then video, stacked and centred. */
+.hero { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2rem; padding: 1rem 0 2.5rem; }
+.hero-brand { display: flex; align-items: center; justify-content: center; gap: clamp(1rem, 3vw, 1.75rem); }
+.hero-brand .hero-logo { width: clamp(96px, 16vw, 150px); flex: none; }
+.hero-brand h1 { font-size: clamp(1.9rem, 5.2vw, 3.4rem); line-height: 1.05; margin: 0; text-align: left; }
+@media (max-width: 460px) { .hero-brand h1 { width: min-content; } } /* two lines, centred beside the logo */
 .hero-text { text-align: center; }
-.hero h1 { font-size: clamp(2rem, 4.2vw, 2.6rem); line-height: 1.1; max-width: 9ch; margin: 0 auto .9rem; }
-.hero .lead { margin: 0 auto; max-width: 46ch; }
+.hero .lead { margin: 0 auto; max-width: 60ch; }
 .hero .cta-row:empty { display: none; }
-.hero .promo-video { grid-column: 1 / -1; max-width: 720px; margin: 0 auto; }
+.hero .promo-video { max-width: 720px; margin: 0 auto; }
 @media (min-width: 1000px) {
-  .hero { grid-template-columns: 220px minmax(0, 1fr) minmax(0, 1.35fr); gap: 2.25rem; }
-  .hero .promo-video { grid-column: auto; max-width: none; }
-  .hero .lead { font-size: 1rem; }
+  .hero { grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); align-items: center; column-gap: 2.5rem; }
+  .hero-brand { grid-column: 1 / -1; }
+  .hero .promo-video { max-width: none; }
+  .hero .lead { max-width: 46ch; }
 }
 .hero-logo {
   width: 100%; height: auto; border-radius: 50%;
@@ -209,7 +210,6 @@ h3 { font-size: 1.05rem; font-weight: 700; color: var(--text); }
 /* ---------- Mobile ---------- */
 @media (max-width: 720px) {
   .hero { grid-template-columns: 1fr; text-align: center; gap: 1.5rem; padding-top: .5rem; }
-  .hero-logo { max-width: 200px; margin: 0 auto; }
   .hero-meta, .cta-row, .countdown { justify-content: center; }
   .cta-row .btn { flex: 1 1 200px; }
   .brand span { font-size: 1rem; }
