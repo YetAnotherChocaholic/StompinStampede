@@ -33,7 +33,7 @@ a { color: var(--gold-2); }
 }
 .brand {
   display: flex; align-items: center; gap: .6rem;
-  color: var(--text); text-decoration: none;
+  color: var(--gold); text-decoration: none;
   font-family: var(--display); font-size: 1.1rem; letter-spacing: .02em;
 }
 .brand img { border-radius: 50%; }
