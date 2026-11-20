@@ -203,6 +203,13 @@ h3 { font-size: 1.05rem; font-weight: 700; color: var(--text); }
   .countdown div { min-width: 0; flex: 1; }
 }
 
+/* Tablets / narrow windows: tighten the labelled top-bar buttons so they fit */
+@media (min-width: 721px) and (max-width: 900px) {
+  .topbar { gap: .6rem; }
+  .fb-btn { padding: .45rem .65rem; gap: .3rem; }
+  .top-links { gap: .35rem; }
+}
+
 /* Very small phones: keep the logo, name and five link icons on one row */
 @media (max-width: 400px) {
   .topbar { gap: .5rem; }
