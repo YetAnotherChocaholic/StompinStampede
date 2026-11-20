@@ -29,6 +29,15 @@
     phoneTop.href = "tel:" + S.contactPhone.replace(/[^\d+]/g, "");
     phoneTop.title = S.contactPhone.trim();
   } else phoneTop.hidden = true;
+  // Footer email and phone: show the address/number as the link text
+  $$("[data-email]").forEach((a) => {
+    if (has(S.contactEmail)) { a.href = "mailto:" + S.contactEmail.trim(); a.textContent = S.contactEmail.trim(); }
+    else a.hidden = true;
+  });
+  $$("[data-phone]").forEach((a) => {
+    if (has(S.contactPhone)) { a.href = "tel:" + S.contactPhone.replace(/[^\d+]/g, ""); a.textContent = S.contactPhone.trim(); }
+    else a.hidden = true;
+  });
   [["instagramUrl", "[data-instagram]"], ["tiktokUrl", "[data-tiktok]"]].forEach(([key, sel]) => {
     $$(sel).forEach((a) => {
       if (has(S[key])) a.href = S[key].trim(); else a.hidden = true;
