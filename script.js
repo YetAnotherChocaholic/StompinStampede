@@ -108,6 +108,14 @@
   if (has(S.tiktokUrl)) contacts.push(card("TikTok", `<a href="${esc(S.tiktokUrl.trim())}" target="_blank" rel="noopener">${esc(S.tiktokUrl.trim().replace(/\/+$/, "").split("/").pop())} →</a>`));
   $("#contact-cards").innerHTML = contacts.join("");
 
+  /* ---------- Promo video ---------- */
+  // Don't autoplay for visitors who have asked their device to reduce motion.
+  const promo = $(".promo-video");
+  if (promo && window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    promo.removeAttribute("autoplay");
+    promo.pause();
+  }
+
   /* ---------- Countdown ---------- */
   if (has(S.startDate)) {
     const target = new Date(S.startDate + "T09:00:00");
