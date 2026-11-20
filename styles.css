@@ -91,17 +91,29 @@ h2 { font-family: var(--display); font-weight: 400; font-size: clamp(1.5rem, 4vw
 .panel > h2:first-child { margin-top: .5rem; }
 h3 { font-size: 1.05rem; font-weight: 700; color: var(--text); }
 .lead { color: var(--muted); font-size: 1.08rem; max-width: 65ch; margin: 0 0 1.5rem; }
-#home .lead { text-align: center; margin-left: auto; margin-right: auto; } /* Centre the welcome text */
 .promo-video {
-  display: block; width: 100%; max-width: 720px; height: auto; aspect-ratio: 854 / 480;
-  margin: 0 auto 2rem; border-radius: var(--radius); border: 1px solid var(--line); background: #000;
+  display: block; width: 100%; height: auto; aspect-ratio: 854 / 480;
+  border-radius: var(--radius); border: 1px solid var(--line); background: #000;
 }
 .eyebrow { text-transform: uppercase; letter-spacing: .18em; font-size: .78rem; font-weight: 600; color: var(--muted); margin: 0 0 .5rem; }
 
-/* ---------- Hero ---------- */
+/* ---------- Hero ----------
+   Desktop (1000px+): logo | title & welcome text | video, side by side.
+   Tablet: logo beside the text, video full width underneath.
+   Phone: everything stacked and centred. */
 .hero {
-  display: grid; grid-template-columns: minmax(0, 340px) 1fr; gap: 2.5rem; align-items: center;
+  display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 1.5rem 2.5rem; align-items: center;
   padding: 1rem 0 2.5rem;
+}
+.hero-text { text-align: center; }
+.hero h1 { font-size: clamp(2rem, 4.2vw, 2.6rem); line-height: 1.1; max-width: 9ch; margin: 0 auto .9rem; }
+.hero .lead { margin: 0 auto; max-width: 46ch; }
+.hero .cta-row:empty { display: none; }
+.hero .promo-video { grid-column: 1 / -1; max-width: 720px; margin: 0 auto; }
+@media (min-width: 1000px) {
+  .hero { grid-template-columns: 220px minmax(0, 1fr) minmax(0, 1.35fr); gap: 2.25rem; }
+  .hero .promo-video { grid-column: auto; max-width: none; }
+  .hero .lead { font-size: 1rem; }
 }
 .hero-logo {
   width: 100%; height: auto; border-radius: 50%;
@@ -111,6 +123,7 @@ h3 { font-size: 1.05rem; font-weight: 700; color: var(--text); }
 .hero-meta .dot { color: var(--gold); font-size: .8rem; }
 
 .countdown { display: flex; gap: .6rem; margin: 0 0 1.5rem; }
+.countdown[hidden] { display: none; }
 .countdown div {
   min-width: 68px; text-align: center; padding: .6rem .4rem;
   background: var(--surface); border: 1px solid var(--line); border-radius: 10px;
@@ -196,7 +209,7 @@ h3 { font-size: 1.05rem; font-weight: 700; color: var(--text); }
 /* ---------- Mobile ---------- */
 @media (max-width: 720px) {
   .hero { grid-template-columns: 1fr; text-align: center; gap: 1.5rem; padding-top: .5rem; }
-  .hero-logo { max-width: 260px; margin: 0 auto; }
+  .hero-logo { max-width: 200px; margin: 0 auto; }
   .hero-meta, .cta-row, .countdown { justify-content: center; }
   .cta-row .btn { flex: 1 1 200px; }
   .brand span { font-size: 1rem; }
