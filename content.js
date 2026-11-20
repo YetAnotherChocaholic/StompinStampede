@@ -115,6 +115,6 @@ window.SITE = {
 
   /* ---------- CONTACT TAB ---------- */
   contactEmail: "stompinstampede2027@gmail.com",                      // e.g. "info@stompinstampede.com"
-  contactPhone: "0436127325",                      // e.g. "(555) 123-4567"
+  contactPhone: "0436 127 325",                      // e.g. "(555) 123-4567"
   contactNote: "Questions? Reach out — we’d love to hear from you.",
 };

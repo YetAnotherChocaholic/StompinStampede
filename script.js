@@ -29,13 +29,13 @@
     phoneTop.href = "tel:" + S.contactPhone.replace(/[^\d+]/g, "");
     phoneTop.title = S.contactPhone.trim();
   } else phoneTop.hidden = true;
-  // Footer email and phone: show the address/number as the link text
+  // Footer email and phone links
   $$("[data-email]").forEach((a) => {
-    if (has(S.contactEmail)) { a.href = "mailto:" + S.contactEmail.trim(); a.textContent = S.contactEmail.trim(); }
+    if (has(S.contactEmail)) { a.href = "mailto:" + S.contactEmail.trim(); a.title = S.contactEmail.trim(); }
     else a.hidden = true;
   });
   $$("[data-phone]").forEach((a) => {
-    if (has(S.contactPhone)) { a.href = "tel:" + S.contactPhone.replace(/[^\d+]/g, ""); a.textContent = S.contactPhone.trim(); }
+    if (has(S.contactPhone)) { a.href = "tel:" + S.contactPhone.replace(/[^\d+]/g, ""); a.title = S.contactPhone.trim(); }
     else a.hidden = true;
   });
   [["instagramUrl", "[data-instagram]"], ["tiktokUrl", "[data-tiktok]"]].forEach(([key, sel]) => {
